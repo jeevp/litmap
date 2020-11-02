@@ -12,6 +12,8 @@ import requests
 
 app = Flask(__name__)
 
+GOOGLE_MAPS_ACCESS_TOKEN = config.GOOGLE_MAPS_ACCESS_TOKEN
+
 class Location:
     def __init__(self, text, label, context):
         self.text = text
@@ -27,7 +29,7 @@ class Location:
             'https://maps.googleapis.com/maps/api/geocode/json',
             params={
                 'address': self.text,
-                'key': config.GOOGLE_MAPS_ACCESS_TOKEN
+                'key': 'AIzaSyACLuoDomujgtH1FgRDALg_eUDdwqDr1cg'
             }
         )
         print(r.json()['results'][0])
