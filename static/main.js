@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiamVldiIsImEiOiJjazl4Z3ZzdngwazRvM25tcjZ6a3RzMDd0In0.w2ebSrTswzuf-tbgQ7oxfQ';
+mapboxgl.accessToken = config.mapboxToken;
 
 var map = new mapboxgl.Map({
   container: 'map',
@@ -101,20 +101,18 @@ var app = new Vue({
           this.locationsData = response.data;
 
           for (let i = 0; i < this.locationsData.length; i++) {
-            var currentLocation = JSON.parse(this.locationsData[i])
-            var latlong = currentLocation.latlong.reverse()
-
+            var currentLocation = this.locationsData[i]
             this.locations.push(currentLocation)
 
             var popup = new mapboxgl.Popup({ closeOnClick: false })
-              .setLngLat(latlong)
+              .setLngLat(currentLocation.latlong)
               .setHTML(
-                '<h4>' + currentLocation.text + '</h4>' +
-                '<p>"...' + currentLocation.all_contexts.join("...\"<br>\"...") + '..."</p>'
+                '<h4>' + currentLocation.context + '</h4>' +
+                '<p>"...' + 'currentLocation.all_contexts.join("...\"<br>\"...")' + '..."</p>'
               )
 
             var marker = new mapboxgl.Marker()
-              .setLngLat(latlong)
+              .setLngLat(currentLocation.latlong)
               .setPopup(popup)
               .addTo(map)
 

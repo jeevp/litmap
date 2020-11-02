@@ -1,7 +1,7 @@
 body {
   margin: 0 auto;
   padding: 0;
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Public Sans', sans-serif;
   color: white;
 }
 
@@ -88,10 +88,10 @@ h3 {
 }
 
 .location-container .location-context {
-  color: #ffffffa6;
-  font-size: 0.8em;
+  color: #ffffffe1;
+  font-size: 0.75em;
   display: block;
-  font-family: 'Charter', serif;
+  font-family: 'IBM PLEX MONO', serif;
   font-style: italic;
 }
 
