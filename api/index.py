@@ -12,7 +12,7 @@ import requests
 
 app = Flask(__name__)
 
-GOOGLE_MAPS_ACCESS_TOKEN = config.GOOGLE_MAPS_ACCESS_TOKEN
+# GOOGLE_MAPS_ACCESS_TOKEN = config.GOOGLE_MAPS_ACCESS_TOKEN
 
 class Location:
     def __init__(self, text, label, context):
